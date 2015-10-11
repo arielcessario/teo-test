@@ -1,0 +1,42 @@
+<div class="main-container">
+    <div ng-controller="ListController as listCtrl" class="container">
+        <div class="page-header">
+            <h1>Listado de Usuarios</h1>
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Apellido</th>
+                <th>Nombre</th>
+                <th>Direccion</th>
+                <th>Mail</th>
+                <th>Telefono</th>
+                <th>Fecha Nacimiento</th>
+                <th>Rol</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="usuario in listCtrl.usuarios | limitTo:listCtrl.end:listCtrl.start">
+                    <td>{{usuario.usuario_id}}</td>
+                    <td>{{usuario.apellido}}</td>
+                    <td>{{usuario.nombre}}</td>
+                    <td>----------</td>
+                    <td>{{usuario.mail}}</td>
+                    <td>{{usuario.telefono}}</td>
+                    <td>{{usuario.fecha_nacimiento}}</td>
+                    <td>{{usuario.rol_id}}</td>
+                </tr>
+                <div class="pager">
+                    <button ng-click="listCtrl.prev()" class="btn btn-xs btn-default">prev</button>
+                    <input type="text" ng-keyup="listCtrl.goToPagina()" ng-model="listCtrl.pagina" >
+                    <button ng-click="listCtrl.next()" class="btn btn-xs btn-default">next</button>
+                </div>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
