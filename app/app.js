@@ -9,6 +9,7 @@ angular.module('myApp', [
   'acUsuarios',
   'teo.list',
   'teo.create',
+  'teo.edit',
   'myApp.version'
 ]).
 config(['$routeProvider', function($routeProvider) {
@@ -19,4 +20,6 @@ MainCtrl.$inject = ['$scope'];
 
 function MainCtrl($scope) {
   var vm = this;
+
+
 }

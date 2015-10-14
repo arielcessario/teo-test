@@ -29,7 +29,7 @@
     vm.usuarios = [];
     vm.start = 0;
     vm.pagina = UserVars.pagina;
-    UserVars.paginacion = 3;
+    UserVars.paginacion = 5;
     vm.end = UserVars.paginacion;
 
     UserService.get(function (data) {
@@ -50,6 +50,11 @@
     vm.goToPagina = function () {
       vm.start= UserService.goToPagina(vm.pagina).start;
     };
+
+    vm.edit = function(id) {
+      console.log(id);
+      $location.path('edit/' + id);
+    }
 
   }
 
